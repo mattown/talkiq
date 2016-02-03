@@ -1,0 +1,36 @@
+___________      .__   __     .___________
+\__    ___/____  |  | |  | __ |   \_____  \
+  |    |  \__  \ |  | |  |/ / |   |/  / \  \
+  |    |   / __ \|  |_|    <  |   /   \_/.  \
+  |____|  (____  /____/__|_ \ |___\_____\ \_/
+               \/          \/            \__>
+
+#
+#  Install Notes
+#
+
+python3 is required
+
+$ sudo apt-get install python3
+
+
+#
+#  Description
+#
+#
+
+This simple etl script will take a target directory and search for any .txt files
+It also assumes that there is a file called "stopwords.txt"
+
+
+
+
+
+
+
+
+python3 etl.py <target directory>
+
+
+
+
