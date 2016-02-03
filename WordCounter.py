@@ -1,8 +1,9 @@
-import re
+import re, statistics
 
 class Counter:
     def __init__(self, paths, swords=[]):
         self.unique_words ={}
+        self.unique_word_counts =[]
         self.stop_words = swords
         self.file_paths = paths
         self.trailing_word_counter = set()
@@ -11,8 +12,7 @@ class Counter:
     def etlroutine(self):
         for path in self.file_paths:
             self.parsefile(path)
-            outputline = '%.1f\n' % float(len(self.trailing_word_counter))
-            self.f2.write(outputline)
+            self.unique_word_counts.append( len(self.trailing_word_counter))
             self.trailing_word_counter = set()
 
     def parsefile(self, filepath):
@@ -35,10 +35,21 @@ class Counter:
                     else:
                         self.unique_words[w] = 1
     def writeoutputfiles(self):
+        # process feature1.txt
         words = list(self.unique_words.keys())
         words.sort()
+        f1output = []
         for w in words:
-            self.f1.write('%s %s\n' % (self.unique_words[w], w)  )
+            f1output.append('%s %s' % (self.unique_words[w], w)  )
+        self.f1.write('\n'.join(f1output))
+
+        # process feature2.txt
+        f2output = []
+        for i in range(len(self.unique_word_counts)):
+            median_array = self.unique_word_counts[0:i+1]
+            median_array.sort()
+            f2output.append('%.1f' % float(statistics.median(median_array)))
+        self.f2.write('\n'.join(f2output))
         self.f1.close()
         self.f2.close()
 

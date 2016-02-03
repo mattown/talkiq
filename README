@@ -37,3 +37,8 @@ This will produce 2 files
     feature2.txt --> total unique word count by file (excluding words found in stopwords.txt
 
 
+For example in this git repo try
+
+    cd to talkiq directory
+
+    $ python3 etl.py test_data
