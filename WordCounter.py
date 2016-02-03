@@ -22,7 +22,7 @@ class Counter:
 
     def parseline(self, line):
         # split on regex, utf-8 whitespace
-        words =re.split('\s+', line.strip().lower(), re.UNICODE)
+        words =re.split('\s+', line.strip().lower())
         self.parsewords(words)
 
     def parsewords(self,words):
@@ -48,6 +48,7 @@ class Counter:
         f2output = []
         for i in range(len(self.unique_word_counts)):
             median_array = self.unique_word_counts[0:i+1]
+            median_array.sort()
             f2output.append('%.1f' % float(statistics.median(median_array)))
         self.f2.write('\n'.join(f2output))
         self.f1.close()
