@@ -34,6 +34,7 @@ class Counter:
                         self.unique_words[w] += 1
                     else:
                         self.unique_words[w] = 1
+
     def writeoutputfiles(self):
         # process feature1.txt
         words = list(self.unique_words.keys())
@@ -47,7 +48,6 @@ class Counter:
         f2output = []
         for i in range(len(self.unique_word_counts)):
             median_array = self.unique_word_counts[0:i+1]
-            median_array.sort()
             f2output.append('%.1f' % float(statistics.median(median_array)))
         self.f2.write('\n'.join(f2output))
         self.f1.close()
