@@ -1,23 +1,9 @@
 import sys, glob, os
 from WordCounter import Counter as wc
 #
-#
-#
-#
-#
-#
-
-
-
-
-
-
-#
 # Variables
 #
-stop_words,target_dir, file_paths = [],sys.argv[0],[]
-target_dir ='test_data'
-
+stop_words,target_dir, file_paths = [],sys.argv[1],[]
 
 # Load stop words into memory
 try:
@@ -25,7 +11,6 @@ try:
 except:
     print("Invalid Target Directory")
     exit(1)
-
 
 # Load stop words into memory
 # load raw stop words as utf-8
