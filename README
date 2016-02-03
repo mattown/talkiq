@@ -4,6 +4,32 @@ ___________      .__   __     .___________
   |    |   / __ \|  |_|    <  |   /   \_/.  \
   |____|  (____  /____/__|_ \ |___\_____\ \_/
                \/          \/            \__>
+#
+# Important Note:
+#
+ In the assignment it states that for the moving median in feature2.txt
+22.0
+32.0
+24.0
+Is the solution however I think this is false, as my own investigation and as stated in the document
+the unique counts for the samples are
+
+22
+42
+34
+
+The moving median should be
+sample 1 [22]
+22
+sample 1 + 2 [22,42]
+
+32 ( 22+ 42 /2)
+
+sample 1+ 2 + 3 [22,42,34]
+
+34 (since 34 is in the middle of 22 and 42)
+
+
 
 #
 #  Install Notes
@@ -19,13 +45,21 @@ $ sudo apt-get install python3
 #
 #
 
-This simple etl script will take a target directory and search for any .txt files in it, it will produce a sorted word count
-of unique words in the files, as well as unique counts for each file
-
+This simple etl script will take a target directory and recursively search for any .txt files in it, it will produce a sorted word count
+of unique words in the files, as well as the moving median of unique words in each file sorted by filename
 
 It also assumes that there is an optional file named stopwords.txt in the same runtime directory and all this is is a list of specific words
 to filter out
 
+The etl script stores the unique words as a simple hash index that gets updated as more files are read, everything is stored in memory before writing
+
+I realize this isn't the fastest possible way to do this, but given the time restraint I didn't have time to impliment a streaming solution
+
+
+#
+#  Run time
+#
+#
 
 To run the script run the following
 
@@ -34,7 +68,7 @@ To run the script run the following
 This will produce 2 files
 
     feature1.txt --> this has a sorted word count of unique words found in the target directory (excluding words found in stopwords.txt)
-    feature2.txt --> total unique word count by file (excluding words found in stopwords.txt
+    feature2.txt --> total moving median unique word count by file (excluding words found in stopwords.txt
 
 
 For example in this git repo try
