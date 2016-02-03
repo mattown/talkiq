@@ -19,18 +19,21 @@ $ sudo apt-get install python3
 #
 #
 
-This simple etl script will take a target directory and search for any .txt files
-It also assumes that there is a file called "stopwords.txt"
+This simple etl script will take a target directory and search for any .txt files in it, it will produce a sorted word count
+of unique words in the files, as well as unique counts for each file
 
 
+It also assumes that there is an optional file named stopwords.txt in the same runtime directory and all this is is a list of specific words
+to filter out
 
 
+To run the script run the following
 
+    $ python3 etl.py <target directory>
 
+This will produce 2 files
 
-
-python3 etl.py <target directory>
-
-
+    feature1.txt --> this has a sorted word count of unique words found in the target directory (excluding words found in stopwords.txt)
+    feature2.txt --> total unique word count by file (excluding words found in stopwords.txt
 
 
