@@ -8,18 +8,18 @@ ___________      .__   __     .___________
 # Important Note:
 #
 
-In the assignment it states that for the moving median in feature2.txt
+In the assignment it states that for solution to the moving median in feature2.txt is:
 
 22.0
 32.0
 24.0
 
-Is the solution however I think this is false, as my own investigation and as stated in the document
+I think there is a typo because I think this is false, as per my own investigation and as stated in the document
 the unique counts for the samples are
 
-22
-42
-34
+22 sample 1
+42 sample 2
+34 sample 3
 
 The moving median should be
 sample 1 [22]
