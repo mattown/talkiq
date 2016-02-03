@@ -57,11 +57,11 @@ This simple etl script will take a target directory and recursively search for a
 
 It also assumes that there is an optional file named stopwords.txt in the same runtime directory and all this is is a list of specific words to filter out
 
-The etl script stores the unique words as a simple hash index that gets updated as more files are read, everything is stored in memory before writing
+The etl script stores the unique words as a simple hash index that gets updated as more files are read, everything is stored in memory before writing to disk
 
-Another important note, this script assumes we read things as UTF-8 as it makes use of the special regex utf-8 function to parse ALL whitespace that exists and checks for words inbetween them, this is much better than just parsing on the default "space"
+Another important note, this script assumes we read things as UTF-8 as it makes use of the special regex utf-8 function to parse ALL WHITESPACE that exists (think all languages) and checks for non-whitespace characters inbetween them, this is much better than just parsing on the default "space" value on North American language settings ; )
 
-I realize this isn't the fastest possible way to do this, but given the time restraint I didn't have time to impliment a streaming solution
+I realize this isn't the fastest possible way to do this, but given the time restraint I didn't have time to implement a faster solution, but if I were designing for performance, I would tweak this to ensure that we stream + thread multiple input files and also stream our moving median output
 
 
 #
