@@ -32,7 +32,7 @@ sample 1 + 2 [22,42]
 
 32 ( 22+ 42 /2)
 
-sample 1+ 2 + 3 [22,34,42]
+sample 1+ 2 + 3 [22,34,42] (sorted to highlight the median!)
 
 34 (since 34 is in the middle value of 22 and 42)
 
