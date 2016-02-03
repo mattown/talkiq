@@ -51,11 +51,9 @@ $ sudo apt-get install python3
 #
 #
 
-This simple etl script will take a target directory and recursively search for any .txt files in it, it will produce a sorted word count
-of unique words in the files, as well as the moving median of unique words in each file sorted by filename
+This simple etl script will take a target directory and recursively search for any .txt files in it, it will produce a sorted word count of unique words in the files, as well as the moving median of unique words in each file sorted by filename
 
-It also assumes that there is an optional file named stopwords.txt in the same runtime directory and all this is is a list of specific words
-to filter out
+It also assumes that there is an optional file named stopwords.txt in the same runtime directory and all this is is a list of specific words to filter out
 
 The etl script stores the unique words as a simple hash index that gets updated as more files are read, everything is stored in memory before writing
 
@@ -74,11 +72,12 @@ To run the script run the following
 This will produce 2 files
 
     feature1.txt --> this has a sorted word count of unique words found in the target directory (excluding words found in stopwords.txt)
-    feature2.txt --> total moving median unique word count by file (excluding words found in stopwords.txt
+
+    feature2.txt --> total moving median unique word count by file read (sorted asc, excludes words found in stopwords.txt
 
 
-For example in this git repo try
+For example for the folder with our sample data (test_data in this repo)
 
-    cd to talkiq directory
+    cd to directory
 
     $ python3 etl.py test_data
