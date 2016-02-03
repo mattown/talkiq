@@ -22,7 +22,7 @@ class Counter:
 
     def parseline(self, line):
         # split on regex, utf-8 whitespace
-        words =re.split('\s+', line.strip().lower())
+        words =re.split('\s+', line.strip().lower(), re.UNICODE)
         self.parsewords(words)
 
     def parsewords(self,words):

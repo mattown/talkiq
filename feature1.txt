@@ -3,7 +3,7 @@
 3 air
 1 alrighty
 1 an
-4 and
+3 and
 1 are
 1 around
 2 as
@@ -20,8 +20,8 @@
 1 feel
 1 few
 1 first
-4 for
-1 good
+1 for
+1 for and for their uh you know for their own good
 1 guess
 1 have
 2 hi
@@ -35,7 +35,7 @@
 1 it
 3 it's
 2 just
-6 know
+5 know
 1 last
 1 like
 1 member
@@ -48,7 +48,6 @@
 1 one
 1 our
 1 outfit
-1 own
 2 pollution
 1 quality
 1 really
@@ -58,7 +57,6 @@
 1 substances
 1 talk
 4 the
-2 their
 1 things
 1 think
 8 to
@@ -75,5 +73,5 @@
 1 work
 1 world
 1 yeah
-10 you
+9 you
 1 you'd
