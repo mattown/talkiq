@@ -57,6 +57,8 @@ It also assumes that there is an optional file named stopwords.txt in the same r
 
 The etl script stores the unique words as a simple hash index that gets updated as more files are read, everything is stored in memory before writing
 
+Another important note, this script assumes we read things as UTF-8 as it makes use of the special regex utf-8 function to parse ALL whitespace that exists and checks for words inbetween them, this is much better than just parsing on the default "space"
+
 I realize this isn't the fastest possible way to do this, but given the time restraint I didn't have time to impliment a streaming solution
 
 

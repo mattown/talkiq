@@ -1,11 +1,12 @@
 import sys, glob, os
 from WordCounter import Counter as wc
+
 #
 # Variables
 #
 stop_words,target_dir, file_paths = [],sys.argv[1],[]
 
-# Load stop words into memory
+# Check to make sure our target directory exists, else throw an error message and exit
 try:
     assert os.path.isdir(target_dir)
 except:
